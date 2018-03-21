@@ -162,10 +162,12 @@ begin
     if not NeedIgnore(Letter, IgnoreLetters) then
     begin
       Symbol := SymbolByLetter(Letter);
-      if Assigned(Symbol) then
-        Symbol.IncreaseUse
-      else
-        _List.Add(TCryptogramSymbol.New(Letter));
+      if not Assigned(Symbol) then
+      begin
+        Symbol := TCryptogramSymbol.New(Letter);
+        _List.Add(Symbol);
+      end;
+      Symbol.IncreaseUse;
       _Text := _Text + Letter;
     end;
 end;
