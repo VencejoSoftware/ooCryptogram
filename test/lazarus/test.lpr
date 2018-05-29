@@ -1,5 +1,5 @@
 {
-  Copyright (c) 2016, Vencejo Software
+  Copyright (c) 2018, Vencejo Software
   Distributed under the terms of the Modified BSD License
   The full license is distributed with this software
 }
@@ -7,9 +7,10 @@ program test;
 
 uses
   ooRunTest,
-  ooBytes.StringOfBytes_test in '..\code\ooBytes.StringOfBytes_test.pas',
-  ooBytes.Scale_test in '..\code\ooBytes.Scale_test.pas',
-  ooBytes.ByteFromInteger_test in '..\code\ooBytes.ByteFromInteger_test.pas';
+  ooCryptogram.Alphabet_test in '..\code\ooCryptogram.Alphabet_test.pas',
+  ooCryptogram.Symbol_test in '..\code\ooCryptogram.Symbol_test.pas',
+  ooCryptogram.Alphabet in '..\..\code\ooCryptogram.Alphabet.pas',
+  ooCryptogram.Symbol in '..\..\code\ooCryptogram.Symbol.pas';
 
 {R *.RES}
 

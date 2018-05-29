@@ -16,7 +16,7 @@ interface
 
 uses
   SysUtils,
-  Generics.Collections,
+  ooIterableList,
   ooCryptogram.Symbol;
 
 type
@@ -88,7 +88,7 @@ type
   TCryptogramAlphabet = class sealed(TInterfacedObject, ICryptogramAlphabet)
   strict private
     _Text: WideString;
-    _List: TList<ICryptogramSymbol>;
+    _List: IIterableList<ICryptogramSymbol>;
   private
     function SymbolByLetter(const Letter: WideChar): ICryptogramSymbol;
     function NeedIgnore(const Letter: WideChar; const IgnoreLetters: array of WideChar): Boolean;
@@ -101,7 +101,6 @@ type
     procedure Load(const Text: WideString; const IgnoreLetters: array of WideChar);
     procedure ChangeKey(const Key: WideString);
     constructor Create;
-    destructor Destroy; override;
     class function New: ICryptogramAlphabet;
   end;
 
@@ -157,7 +156,7 @@ var
   Symbol: ICryptogramSymbol;
 begin
   _List.Clear;
-  _Text := EmptyStr;
+  _Text := EmptyWideStr;
   for Letter in Text do
     if not NeedIgnore(Letter, IgnoreLetters) then
     begin
@@ -176,7 +175,7 @@ function TCryptogramAlphabet.Key: WideString;
 var
   Symbol: ICryptogramSymbol;
 begin
-  Result := EmptyStr;
+  Result := EmptyWideStr;
   for Symbol in _List do
     Result := Result + Symbol.Translate;
 end;
@@ -196,13 +195,7 @@ end;
 
 constructor TCryptogramAlphabet.Create;
 begin
-  _List := TList<ICryptogramSymbol>.Create;
-end;
-
-destructor TCryptogramAlphabet.Destroy;
-begin
-  _List.Free;
-  inherited;
+  _List := TIterableList<ICryptogramSymbol>.New;
 end;
 
 class function TCryptogramAlphabet.New: ICryptogramAlphabet;

@@ -34,7 +34,11 @@ var
 
 implementation
 
+{$IFDEF FPC}
+{$R *.lfm}
+{$ELSE}
 {$R *.dfm}
+{$ENDIF}
 
 procedure TMainForm.UpdateAlphabetList(const CryptogramAlphabet: ICryptogramAlphabet; const Control: TListBox);
 var

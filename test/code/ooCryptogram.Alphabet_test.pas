@@ -44,7 +44,11 @@ end;
 procedure TCryptogramAlphabetTest.ChangeKeySetNewKey;
 begin
   _CryptogramAlphabet.ChangeKey('12345678');
+{$IFDEF FPC}
+  CheckTrue('12345678' = _CryptogramAlphabet.Key);
+{$ELSE}
   CheckEquals('12345678', _CryptogramAlphabet.Key);
+{$ENDIF}
 end;
 
 procedure TCryptogramAlphabetTest.CountIs8;
@@ -56,25 +60,41 @@ procedure TCryptogramAlphabetTest.DecodeWithKeyReturn1234567887654321;
 begin
   _CryptogramAlphabet.Load('SXTJLÑ PP ÑLJTXS', []);
   _CryptogramAlphabet.ChangeKey('12345678');
+{$IFDEF FPC}
+  CheckTrue('1234567887654321' = _CryptogramAlphabet.Decode);
+{$ELSE}
   CheckEquals('1234567887654321', _CryptogramAlphabet.Decode);
+{$ENDIF}
 end;
 
 procedure TCryptogramAlphabetTest.DecodeWithOutKeyReturnSXTJLNPPNLJTXS;
 begin
   _CryptogramAlphabet.Load('SXTJLÑ PP ÑLJTXS', []);
+{$IFDEF FPC}
+  CheckTrue('SXTJLÑ PP ÑLJTXS' = _CryptogramAlphabet.Decode);
+{$ELSE}
   CheckEquals('SXTJLÑ PP ÑLJTXS', _CryptogramAlphabet.Decode);
+{$ENDIF}
 end;
 
 procedure TCryptogramAlphabetTest.KeyInitialIsSame;
 begin
+{$IFDEF FPC}
+  CheckTrue('SXTJLÑ P' = _CryptogramAlphabet.Key);
+{$ELSE}
   CheckEquals('SXTJLÑ P', _CryptogramAlphabet.Key);
+{$ENDIF}
 end;
 
 procedure TCryptogramAlphabetTest.LoadStringIgnoringSpaces;
 begin
   _CryptogramAlphabet.Load('SXTJLÑ PP ÑLJTXS', [' ']);
   _CryptogramAlphabet.ChangeKey('12345678');
+{$IFDEF FPC}
+  CheckTrue('12345677654321' = _CryptogramAlphabet.Decode);
+{$ELSE}
   CheckEquals('12345677654321', _CryptogramAlphabet.Decode);
+{$ENDIF}
 end;
 
 procedure TCryptogramAlphabetTest.SymbolByIndexOf2IsT;
