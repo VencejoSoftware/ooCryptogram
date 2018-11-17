@@ -11,7 +11,7 @@ interface
 
 uses
   SysUtils, Classes, Graphics, Controls, Forms, Dialogs, StdCtrls, Math,
-  ooCryptogram.Symbol, ooCryptogram.Alphabet;
+  CryptogramSymbol, CryptogramAlphabet;
 
 type
   TMainForm = class(TForm)

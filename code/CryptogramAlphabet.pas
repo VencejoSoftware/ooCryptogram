@@ -10,14 +10,14 @@
   @author Vencejo Software <www.vencejosoft.com>
 }
 {$ENDREGION}
-unit ooCryptogram.Alphabet;
+unit CryptogramAlphabet;
 
 interface
 
 uses
   SysUtils,
-  ooIterableList,
-  ooCryptogram.Symbol;
+  IterableList,
+  CryptogramSymbol;
 
 type
 {$REGION 'documentation'}

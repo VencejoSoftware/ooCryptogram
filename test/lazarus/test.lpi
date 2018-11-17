@@ -122,19 +122,19 @@
         <IsPartOfProject Value="True"/>
       </Unit0>
       <Unit1>
-        <Filename Value="..\code\ooCryptogram.Alphabet_test.pas"/>
+        <Filename Value="..\code\CryptogramAlphabet_test.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit1>
       <Unit2>
-        <Filename Value="..\code\ooCryptogram.Symbol_test.pas"/>
+        <Filename Value="..\code\CryptogramSymbol_test.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit2>
       <Unit3>
-        <Filename Value="..\..\code\ooCryptogram.Alphabet.pas"/>
+        <Filename Value="..\..\code\CryptogramAlphabet.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit3>
       <Unit4>
-        <Filename Value="..\..\code\ooCryptogram.Symbol.pas"/>
+        <Filename Value="..\..\code\CryptogramSymbol.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit4>
     </Units>

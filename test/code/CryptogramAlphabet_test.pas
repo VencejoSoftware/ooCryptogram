@@ -3,14 +3,14 @@
   Distributed under the terms of the Modified BSD License
   The full license is distributed with this software
 }
-unit ooCryptogram.Alphabet_test;
+unit CryptogramAlphabet_test;
 
 interface
 
 uses
   SysUtils,
-  ooCryptogram.Symbol,
-  ooCryptogram.Alphabet,
+  CryptogramSymbol,
+  CryptogramAlphabet,
 {$IFDEF FPC}
   fpcunit, testregistry
 {$ELSE}
