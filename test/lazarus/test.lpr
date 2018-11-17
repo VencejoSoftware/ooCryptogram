@@ -6,11 +6,11 @@
 program test;
 
 uses
-  ooRunTest,
-  ooCryptogram.Alphabet_test in '..\code\ooCryptogram.Alphabet_test.pas',
-  ooCryptogram.Symbol_test in '..\code\ooCryptogram.Symbol_test.pas',
-  ooCryptogram.Alphabet in '..\..\code\ooCryptogram.Alphabet.pas',
-  ooCryptogram.Symbol in '..\..\code\ooCryptogram.Symbol.pas';
+  RunTest,
+  CryptogramAlphabet_test in '..\code\CryptogramAlphabet_test.pas',
+  CryptogramSymbol_test in '..\code\CryptogramSymbol_test.pas',
+  CryptogramAlphabet in '..\..\code\CryptogramAlphabet.pas',
+  CryptogramSymbol in '..\..\code\CryptogramSymbol.pas';
 
 {R *.RES}
 

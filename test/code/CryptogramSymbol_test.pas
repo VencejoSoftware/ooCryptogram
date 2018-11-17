@@ -3,13 +3,13 @@
   Distributed under the terms of the Modified BSD License
   The full license is distributed with this software
 }
-unit ooCryptogram.Symbol_test;
+unit CryptogramSymbol_test;
 
 interface
 
 uses
   SysUtils,
-  ooCryptogram.Symbol,
+  CryptogramSymbol,
 {$IFDEF FPC}
   fpcunit, testregistry
 {$ELSE}
